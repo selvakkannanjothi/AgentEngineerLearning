@@ -1,0 +1,90 @@
+Topic: List
+
+append - Adds one item to the end of the list.
+extend - Adds all items from another iterable to the end of the list.
+insert - Inserts an item at a specific index.
+remove - Removes the first matching item by value.
+pop - Removes and returns an item by index (last item by default).
+clear - Removes all items from the list.
+index - Returns the index of the first matching item.
+count - Returns how many times a value appears in the list.
+sort - Sorts the list in place (ascending by default).
+reverse - Reverses the order of items in place.
+copy - Returns a shallow copy of the list.
+
+Topic: Tuple
+
+tuple (overview) - Ordered, immutable collection that allows duplicate values.
+count - Returns how many times a value appears in the tuple.
+index - Returns the index of the first matching value.
+packing - Combines multiple values into a single tuple.
+unpacking - Assigns tuple values to multiple variables.
+extended unpacking (*) - Captures multiple middle values into a list.
+tuple() - Converts an iterable (like list) into a tuple.
+
+Topic: Set
+
+set (overview) - Unordered collection of unique values. No duplicates allowed.
+add - Adds one item to the set.
+update - Adds multiple items from an iterable to the set.
+remove - Removes an item by value. Raises error if not found.
+discard - Removes an item safely. No error if value does not exist.
+pop - Removes and returns an arbitrary item (order is unpredictable).
+clear - Removes all items from the set.
+copy - Returns a shallow copy of the set.
+union (|) - Returns all unique items from both sets.
+intersection (&) - Returns only items common to both sets.
+difference (-) - Returns items in first set but not in second.
+symmetric difference (^) - Returns items in either set but not both.
+issubset - Checks if all items of one set exist in another.
+issuperset - Checks if a set contains all items of another.
+isdisjoint - Returns True if two sets share no common items.
+set() - Converts an iterable to a set (removes duplicates).
+
+Topic: Frozenset
+
+frozenset (overview) - Immutable, unordered collection of unique values.
+frozenset() - Creates an immutable set from an iterable.
+in - Fast membership check in frozenset.
+| (union) - Returns all unique items from both frozensets.
+& (intersection) - Returns common items from both frozensets.
+- (difference) - Returns items in first frozenset but not second.
+^ (symmetric difference) - Returns items in either frozenset but not both.
+issubset - Checks if all values of one frozenset exist in another.
+issuperset - Checks if one frozenset contains all values of another.
+isdisjoint - Returns True when two collections have no common values.
+use case - Can be used as dictionary keys and inside sets because it is hashable.
+
+Topic: Hashable & Unhashable
+
+hashable (overview) - Value with stable hash; can be used in set and as dict key.
+unhashable (overview) - Value without stable hash; cannot be used in set or as dict key.
+hashable examples - int, str, bool, tuple (with hashable items), frozenset.
+unhashable examples - list, dict, set.
+key rule - Mutable types are usually unhashable; immutable types are usually hashable.
+tuple rule - Tuple is hashable only if all inner elements are hashable.
+nested set rule - Use frozenset inside set because regular set is unhashable.
+hash() - Built-in function used to check hashability (raises TypeError for unhashable values).
+
+Topic: Dictionary
+
+dict (overview) - Mutable key-value mapping collection. Keys must be unique and hashable.
+dict[key] - Direct access to value by key (raises KeyError if missing).
+get(key, default=None) - Safe access to value with optional default if key missing.
+in - Checks if key exists in dictionary.
+update(dict) - Adds or updates multiple key-value pairs in one operation.
+setdefault(key, default) - Returns value if key exists, else adds key with default.
+pop(key, default=None) - Removes key and returns its value (safe with default).
+popitem() - Removes and returns the last inserted key-value pair.
+del - Directly removes a key from the dictionary.
+clear() - Removes all items from dictionary.
+keys() - Returns an iterator over all dictionary keys.
+values() - Returns an iterator over all dictionary values.
+items() - Returns an iterator over all key-value pairs (most useful for looping).
+copy() - Returns a shallow copy of the dictionary.
+fromkeys(iterable, value) - Creates a new dict with keys from iterable, all values set to value.
+len() - Returns the number of key-value pairs in dictionary.
+merge (|) - Merges two dicts with union operator (Python 3.9+).
+dict comprehension - Create dict from iterable using {k: v for k, v in iterable}.
+nested dict - Dictionary containing other dictionaries as values.
+use case - Ideal for API responses, configs, test metadata, key-value lookups.
