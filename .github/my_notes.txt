@@ -66,6 +66,52 @@ tuple rule - Tuple is hashable only if all inner elements are hashable.
 nested set rule - Use frozenset inside set because regular set is unhashable.
 hash() - Built-in function used to check hashability (raises TypeError for unhashable values).
 
+Topic: Strings
+
+string (overview) - Ordered, immutable sequence of characters. UTF-8 encoded.
+indexing - Access char by position. s[0] = first, s[-1] = last.
+slicing - s[start:stop:step]. s[::-1] reverses string.
+len() - Returns total number of characters in string.
+concatenation (+) - Joins two strings. Cannot use with int directly.
+repetition (*) - Repeats string n times. msg * 3 prints msg 3 times.
+input() - Always returns string. Use int(input()) for number input.
+int() / str() / float() - Type conversion between string and numbers.
+upper() - Converts all characters to uppercase.
+lower() - Converts all characters to lowercase.
+title() - Capitalizes first letter of every word.
+capitalize() - Capitalizes only first letter of string.
+swapcase() - Swaps upper to lower and lower to upper.
+strip() - Removes leading and trailing whitespace (or given chars).
+lstrip() - Removes only leading (left) whitespace or chars.
+rstrip() - Removes only trailing (right) whitespace or chars.
+replace(old, new) - Replaces all occurrences of old with new.
+count(sub) - Counts how many times a substring appears.
+find(sub) - Returns index of first match, or -1 if not found (safe).
+index(sub) - Returns index of first match, raises ValueError if not found.
+startswith(prefix) - Returns True if string starts with given prefix.
+endswith(suffix) - Returns True if string ends with given suffix.
+split(sep) - Splits string into a list by separator (default: whitespace).
+join(iterable) - Joins list items into a string using separator.
+splitlines() - Splits multiline string into list of lines.
+removeprefix(pre) - Removes prefix if present, else returns string unchanged.
+removesuffix(suf) - Removes suffix if present, else returns string unchanged.
+isdigit() - Returns True if all characters are digits.
+isalpha() - Returns True if all characters are letters.
+isalnum() - Returns True if all characters are letters or digits.
+isspace() - Returns True if all characters are whitespace.
+isupper() / islower() - Checks if string is all upper or lower case.
+center(width, char) - Centers string padded with char to given width.
+ljust() / rjust() - Left or right justifies string within given width.
+zfill(width) - Pads string with zeros on the left to given width.
+f-string - f"text {var}" - Inline variable interpolation and formatting.
+f-string :.2f - Formats float to 2 decimal places. :.4f for 4 places.
+f-string = - f"{var=}" prints variable name and value for debugging.
+raw string r"" - Treats backslashes as literal characters.
+in operator - Checks if substring exists in string. "a" in "abc" -> True.
+escape sequences - \n newline, \t tab, \\ backslash, \' single quote.
+immutability - Strings cannot be modified in place. Must create new string.
+help(str) - Lists all available string methods in Python shell.
+
 Topic: Dictionary
 
 dict (overview) - Mutable key-value mapping collection. Keys must be unique and hashable.
