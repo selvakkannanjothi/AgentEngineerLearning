@@ -1,0 +1,112 @@
+# TEST SELVA - Results History
+
+## Session 1: June 6, 2026
+
+### Overall Score: 7/10 ✅
+
+### Question Breakdown
+| Q | Topic | Question | Answer | Result |
+|---|-------|----------|--------|--------|
+| 1 | List | `sort(reverse=True)` vs `reverse()` | Correct | ✅ |
+| 2 | Tuple | `(5)` vs `(5,)` type difference | Incorrect (said string, actually int) | ❌ |
+| 3 | Set | `remove()` vs `discard()` safety | Correct | ✅ |
+| 4 | String | `find()` vs `index()` on missing substring | Incorrect (reversed the behavior) | ❌ |
+| 5 | Dictionary | `d["key"]` vs `get()` on missing key | Correct | ✅ |
+| 6 | Tuple | Extended unpacking with `*` operator | Correct | ✅ |
+| 7 | Hashable | Why `{set}` fails in nested set | Correct | ✅ |
+| 8 | String | `strip()` method behavior | Correct | ✅ |
+| 9 | Dictionary | `setdefault()` method usage | Incorrect (didn't know) | ❌ |
+| 10 | String | String reverse with `[::-1]` | Correct | ✅ |
+
+### Weak Topics (Score < 100%)
+1. **Tuples** - Single-item tuple creation (comma rule)
+   - Recommendation: Study `.github/my_tasks/concepts/concept_tuples.md` Section 3
+
+2. **Strings** - `find()` vs `index()` difference
+   - Recommendation: Study `.github/my_tasks/concepts/concept_strings.md` Section 16
+
+3. **Dictionaries** - `setdefault()` method
+   - Recommendation: Study `.github/my_tasks/concepts/concept_dictionary.md` Section 6
+
+### Total Mistakes: 3
+All logged in `.github/my_mistakes.txt`
+
+### Date of Test: 2026-06-06
+### Session Duration: 10 questions
+### Test Type: Random mix across all completed topics (Lists, Tuples, Sets, Strings, Dictionaries, Hashable)
+
+---
+
+## Session 2: June 6, 2026
+
+### Overall Score: 0/1 ❌
+
+### Question Breakdown
+| Q | Topic | Question | Answer | Result |
+|---|-------|----------|--------|--------|
+| 1 | String | `"hello world".split()` output | NO (didn't know) | ❌ |
+
+### Weak Topics (Score < 100%)
+1. **Strings** - `split()` method behavior
+   - Recommendation: Study `.github/my_tasks/concepts/concept_strings.md` Section 18
+
+### Total Mistakes: 1
+All logged in `.github/my_mistakes.txt`
+
+### Date of Test: 2026-06-06
+### Session Duration: 1 question
+### Test Type: Single question from random topics
+
+---
+
+## Session 3: June 6, 2026
+
+### Overall Score: 0/1 ❌
+
+### Question Breakdown
+| Q | Topic | Question | Answer | Result |
+|---|-------|----------|--------|--------|
+| 1 | Dictionary | `setdefault()` grouping scenario | NO (didn't know) | ❌ |
+
+### Weak Topics (Repeated Failure!)
+1. **Dictionary** - `setdefault()` method (FAILED 3 TIMES NOW)
+   - **CRITICAL**: Must master this before next test
+   - Recommendation: Study `.github/my_tasks/concepts/concept_dictionary.md` Section 6
+   - Practice: `.github/my_tasks/tasks/dictionary_method_tasks.md`
+
+### Total Mistakes: 1
+All logged in `.github/my_mistakes.txt`
+
+### Date of Test: 2026-06-06
+### Session Duration: 1 question
+### Test Type: Weak-area reinforcement (Dictionary setdefault)
+
+---
+
+## Session 4: June 6, 2026
+
+### Overall Score: 2/3 ✅
+
+### Question Breakdown
+| Q | Topic | Question | Answer | Result |
+|---|-------|----------|--------|--------|
+| 1 | Dictionary | `setdefault(model, []).append()` grouping scenario | Correct (FINALLY mastered after 3 fails!) | ✅ |
+| 2 | String | `find()` vs `index()` on missing substring (find=-1, index=ValueError) | Correct (core concept right; wrongly thought find could return True) | ✅ |
+| 3 | Set / Hashable | Adding a list to a set - exact error + fix | Incorrect (said no error; said use append; missed TypeError unhashable) | ❌ |
+
+### Wins This Session
+1. **Dictionary setdefault()** - MASTERED at last! Got both output and mechanism correct after failing 3 times. 🎉
+
+### Weak Topics (Score < 100%)
+1. **Set / Hashable** - lists are unhashable -> cannot go in a set (TypeError); sets have no append(); fix = use tuple
+   - Recommendation: Study `.github/my_tasks/concepts/concept_hashable_unhashable.md` and `concept_sets.md`
+   - Note: minor String slip too - `find()` returns an integer index, never a boolean True
+
+### Total Mistakes: 1
+All logged in `.github/my_mistakes.txt`
+
+### Date of Test: 2026-06-06
+### Session Duration: 3 questions
+### Test Type: Agentic Engineer mix (weak-area reinforcement: setdefault + find/index; new: set hashability)
+
+---
