@@ -1,0 +1,34 @@
+- Date: 2026-06-06
+  - Topic: Tuple
+  - Question: What is the difference between `x = (5)` and `y = (5,)` in Python?
+  - Selva's Answer: x = (5) is considered as string value; y is considered as tuple since comma is used.
+  - Correct Answer: `x = (5)` is an `int`, not a string. `y = (5,)` is a tuple with one element.
+  - Explanation (English): Parentheses alone do not create a tuple in this case. The comma is what creates a tuple. So `(5)` evaluates to integer `5`, while `(5,)` creates a single-item tuple.
+
+- Date: 2026-06-06
+  - Topic: String
+  - Question: In strings, what is the difference between `find("x")` and `index("x")`, especially when substring is not present?
+  - Selva's Answer: Don't know.
+  - Correct Answer: `find()` returns `-1` when substring is not found, while `index()` raises `ValueError` when not found.
+  - Explanation (English): Both methods return the first position when a match exists. The key difference is behavior on missing substring: `find()` is safe and returns `-1`, but `index()` throws an exception and should be used only when you expect a match.
+
+- Date: 2026-06-06
+  - Topic: Dictionary
+  - Question: In Python dictionaries, what does `setdefault()` do? Give a small example with counting labels.
+  - Selva's Answer: Don't know.
+  - Correct Answer: `setdefault(key, default)` returns the value if key exists, else adds key with the default value and returns the default.
+  - Explanation (English): It's a smart one-liner for initialization. If key already has a value, it returns that. If key doesn't exist, it creates it with the default value you provide. Perfect for counting frequencies because it initializes missing keys to 0 or empty lists on first encounter.
+
+- Date: 2026-06-06
+  - Topic: Dictionary
+  - Question: Given logs = ["timeout", "auth_fail", "timeout", "rate_limit", "timeout"] and using setdefault in a loop, what is the output and why is setdefault useful here?
+  - Selva's Answer: NO (didn't know)
+  - Correct Answer: `{'timeout': ['timeout', 'timeout', 'timeout'], 'auth_fail': ['auth_fail'], 'rate_limit': ['rate_limit']}`. setdefault is useful because it creates the key with an empty list only if it doesn't exist, then returns the list for immediate append.
+  - Explanation (English): setdefault(key, []) checks if key exists. If not, it creates key with empty list and returns it. If yes, it returns the existing list. This allows chaining .append() directly. Using grouped[error] = [] would overwrite the list every time, losing previous values.
+
+- Date: 2026-06-06
+  - Topic: Set / Hashable
+  - Question: A set `called_tools` holds tool names. After `add("search_web")`, `add("read_file")`, `add("search_web")`, what does it contain? Then `called_tools.add(["write_file", "config.json"])` - what happens, name the exact error and why? Bonus: how to fix so the compound identity can be stored?
+  - Selva's Answer: Set contains {search_web, read_file} (correct). But said NO error occurs - claimed the whole list gets added as a single element. Said we should use append() instead of add(). (WRONG)
+  - Correct Answer: The line raises `TypeError: unhashable type: 'list'`. A list is mutable -> unhashable -> cannot be added to a set. Sets have NO append() method (that is a list method); sets use add()/update(). Fix: store as a tuple -> `called_tools.add(("write_file", "config.json"))` because tuples are immutable and hashable.
+  - Explanation (English): Sets store items using their hash value. Only hashable (immutable) types like int, str, tuple, frozenset are allowed. A list is mutable, so it has no stable hash and Python raises TypeError immediately - it does NOT store the list as one element. Also append() belongs to lists, not sets. To store a compound tool identity (name + args) in a dedup set, wrap it in a tuple (or frozenset for unordered keys).
