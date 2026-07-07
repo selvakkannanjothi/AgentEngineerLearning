@@ -140,9 +140,12 @@ Topic: Flow Control (if/elif/else)
 if (overview) - Runs a block only when a condition is True.
 if/else - Runs one block if True, another if False.
 if/elif/else - Checks multiple conditions top to bottom; first True branch wins, rest skipped.
+indentation - Python uses indentation (not braces) to define blocks; inconsistent indent = IndentationError.
 comparison operators - ==, !=, >, <, >=, <= used to build conditions.
 logical operators - and (both true), or (either true), not (flips value).
-truthy/falsy - 0, "", [], {}, set(), None, False are falsy; everything else truthy.
+short circuit evaluation - In and/or chains, evaluation stops as soon as the result is known; remaining conditions don't run.
+truthy/falsy - 0, "", [], {}, set(), None, False are falsy; everything else truthy. e.g. username = "" is falsy.
+bool is int subclass - bool class is a subclass of int; True == 1 and False == 0.
 nested if - if inside if; prefer combining with `and` to avoid deep nesting.
 ternary expression - value = a if condition else b (compact one-line if/else).
 pass - No-op placeholder used when a branch needs no code yet.
@@ -153,10 +156,13 @@ Topic: Loops (for, while)
 
 for loop (overview) - Iterates over a known/finite sequence (list, string, range, dict).
 range(start, stop, step) - Generates a sequence of numbers; stop is exclusive.
+end= in print() - print(x, end=" ") changes line ending so loop output can print on one line.
 enumerate() - Loops with both index and value together.
 for over dict.items() - Loops through key-value pairs together.
 while loop (overview) - Repeats while a condition stays True; used when iteration count is unknown.
-while True + break - Standard pattern for looping until an explicit exit condition.
+while loop with else - else block runs only if the while condition ended naturally (no break hit).
+while True (no condition) - Loops forever by design; must be controlled from inside via break/continue.
+smart looping techniques - continue (skip iteration), pass (no-op placeholder), break (exit loop) - the 3 loop-control tools.
 break - Exits the loop entirely.
 continue - Skips only the current iteration, loop continues.
 pass - No-op placeholder inside a loop body.

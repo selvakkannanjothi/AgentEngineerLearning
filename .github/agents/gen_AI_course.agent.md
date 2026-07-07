@@ -44,6 +44,8 @@ Every new topic follows this exact pattern — always follow it proactively:
             concept_hashable_unhashable.md # Hashable vs unhashable concepts
             concept_strings.md            # Full strings revision notes
             concept_dictionary.md         # Full dictionary revision notes
+            concept_flow_control.md       # Full flow control (if/elif/else) revision notes
+            concept_loops.md              # Full loops (for/while) revision notes
         tasks/
             list_method_tasks.md          # List practice tasks (Q&A + self-assignments)
             tuple_method_tasks.md         # Tuple practice tasks (Q&A + self-assignments)
@@ -52,6 +54,8 @@ Every new topic follows this exact pattern — always follow it proactively:
             hashable_unhashable_method_tasks.md # Hashable practice tasks
             string_method_tasks.md        # String practice tasks
             dictionary_method_tasks.md    # Dictionary practice tasks
+            flow_control_method_tasks.md  # Flow control practice tasks
+            loops_method_tasks.md         # Loop practice tasks
 demo.py                                   # Active practice/scratch file
 AGENTS.md                                 # Root agent memory file
 ```

@@ -12,6 +12,15 @@ else:
     print("Test Failed")
 ```
 
+**Indentation is very important:** Python uses indentation (whitespace), not braces `{}`, to define which statements belong to a block (the `if`, `elif`, `else`, `for`, `while`, function, etc.). All statements in the same block must be indented by the same amount (convention: 4 spaces). Mixing tabs/spaces or inconsistent indent levels raises an `IndentationError`.
+
+```python
+if status_code == 200:
+    print("A")   # same indent - inside the if block
+    print("B")   # same indent - inside the if block
+print("C")       # no indent - outside the if block, always runs
+```
+
 ---
 
 ## 2) Why flow control is needed (problem-first view)
@@ -143,9 +152,37 @@ if not is_valid:
     print("Invalid response")
 ```
 
+### Short-circuit evaluation
+When combining multiple `and`/`or` conditions, Python stops evaluating as soon as the overall result is already known — the remaining conditions are **not executed at all**.
+
+- `and` — if the first condition is False, the whole expression is already False, so the rest are skipped.
+- `or` — if the first condition is True, the whole expression is already True, so the rest are skipped.
+
+```python
+def is_logged_in():
+    print("checked login")
+    return False
+
+def has_permission():
+    print("checked permission")  # never printed - short-circuited
+    return True
+
+if is_logged_in() and has_permission():
+    print("Access granted")
+# checked login
+# (has_permission() never runs because is_logged_in() was already False)
+```
+
+This matters in real code: put the cheapest/most-likely-to-fail condition first, and it's safe to rely on short circuiting to avoid errors, e.g.:
+```python
+data = None
+if data and data.get("status") == 200:   # data.get(...) never runs if data is None/empty
+    print("OK")
+```
+
 ---
 
-## 8) Truthy and Falsy values
+## 8) Truthy and Falsy values, and the Boolean type
 Any value can be used directly in an `if` condition without comparing to `True`/`False`.
 
 Falsy values: `0`, `0.0`, `""` (empty string), `[]`, `{}`, `set()`, `None`, `False`
@@ -157,6 +194,21 @@ if response:
     print("Has data")
 else:
     print("Empty response")  # this runs - {} is falsy
+
+username = ""
+if username:
+    print(f"Welcome {username}")
+else:
+    print("Username missing")  # this runs - "" is falsy
+```
+
+**Boolean is really an int under the hood:** the `bool` class is a subclass of `int`. `True` behaves as `1` and `False` behaves as `0` in arithmetic and comparisons.
+
+```python
+print(True == 1)    # True
+print(False == 0)   # True
+print(True + True)  # 2  - bool added like an int
+print(isinstance(True, int))  # True - bool is an int subclass
 ```
 
 ---
@@ -335,6 +387,9 @@ if not response:  # empty dict/list/string/None/0/False
 - `elif` order matters — put more specific/narrow conditions before general ones.
 - Use `==` for value equality, `is` for identity (mainly `is None`).
 - Empty collections, `0`, `""`, and `None` are all falsy.
+- `bool` is a subclass of `int` — `True == 1` and `False == 0`.
+- `and`/`or` short-circuit — later conditions may never execute if the result is already decided.
+- Indentation defines blocks in Python — inconsistent indentation is a syntax error, not just a style issue.
 - Ternary expressions are for simple value assignment, not complex logic.
 - Guard clauses (`if not x: return`) reduce nesting and improve readability.
 

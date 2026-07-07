@@ -83,6 +83,19 @@ for index, test in enumerate(tests):
 # 2: TC_03
 ```
 
+### Using `end=` in `print()` to control line endings
+By default `print()` ends with a newline (`end="\n"`). Pass `end=` to print loop output on the same line instead of one per line.
+
+```python
+for i in range(5):
+    print(i, end=" ")
+# 0 1 2 3 4   (all on one line, space-separated)
+
+for status in ["PASS", "PASS", "FAIL"]:
+    print(status, end=" | ")
+# PASS | PASS | FAIL |
+```
+
 ---
 
 ## 4) `while` loop — repeating until a condition changes
@@ -118,16 +131,21 @@ while count < 5:
 
 ---
 
-## 5) `while True` with `break` (loop until explicitly stopped)
-Common pattern when the exit condition is checked mid-loop, not at the top.
+## 5) `while True` (loop without a condition) — handled entirely by `break`/`continue`
+Sometimes there's no natural condition to put after `while` — you just want to loop forever until something inside the loop decides to stop, or skip, an iteration. `while True:` combined with `break` (to exit) and `continue` (to skip) is the standard pattern for this.
 
 ```python
 while True:
     user_input = input("Enter prompt (or 'exit'): ")
     if user_input == "exit":
         break
+    if len(user_input) < 3:
+        print("Too short, try again")
+        continue           # skip the rest of this iteration, loop again
     print(f"Processing: {user_input}")
 ```
+
+Without `break`, `while True:` never ends on its own — it relies entirely on internal logic (usually an `if` + `break`) to terminate. `continue` inside it lets you re-loop without falling through to the rest of the body.
 
 ---
 
@@ -174,7 +192,20 @@ else:
     print("Not found in any test case")  # runs - loop finished without break
 ```
 
-Same applies to `while ... else`.
+The same `else` behavior applies to `while` loops: the `else` block runs only if the `while` condition became False naturally (no `break` was hit).
+
+```python
+attempts = 0
+max_attempts = 3
+
+while attempts < max_attempts:
+    attempts += 1
+    print(f"Attempt {attempts}")
+    if attempts == 5:      # never true here, so break never happens
+        break
+else:
+    print("Exhausted all attempts without success")  # runs - while ended normally
+```
 
 ---
 
@@ -364,10 +395,11 @@ else:
 
 - `for` = known/finite iterable; `while` = condition-based, unknown iteration count.
 - `break` exits the loop completely; `continue` skips only the current iteration.
-- Loop `else` runs only if the loop completes without hitting `break`.
+- Loop `else` runs only if the loop completes without hitting `break` — applies to both `for` and `while`.
 - Never mutate a list while iterating over it directly — build a new list/comprehension instead.
-- `while True` + `break` is the standard pattern for "loop until explicit exit condition."
+- `while True` + `break`/`continue` is the standard pattern for "loop with no natural condition, controlled entirely from inside."
 - `enumerate()` gives index + value together — cleaner than manual counters.
+- `print(..., end=" ")` changes the line ending so loop output can print on one line instead of one-per-line.
 
 ---
 
