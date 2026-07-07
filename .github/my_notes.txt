@@ -134,3 +134,34 @@ merge (|) - Merges two dicts with union operator (Python 3.9+).
 dict comprehension - Create dict from iterable using {k: v for k, v in iterable}.
 nested dict - Dictionary containing other dictionaries as values.
 use case - Ideal for API responses, configs, test metadata, key-value lookups.
+
+Topic: Flow Control (if/elif/else)
+
+if (overview) - Runs a block only when a condition is True.
+if/else - Runs one block if True, another if False.
+if/elif/else - Checks multiple conditions top to bottom; first True branch wins, rest skipped.
+comparison operators - ==, !=, >, <, >=, <= used to build conditions.
+logical operators - and (both true), or (either true), not (flips value).
+truthy/falsy - 0, "", [], {}, set(), None, False are falsy; everything else truthy.
+nested if - if inside if; prefer combining with `and` to avoid deep nesting.
+ternary expression - value = a if condition else b (compact one-line if/else).
+pass - No-op placeholder used when a branch needs no code yet.
+guard clause - Early `return` on invalid input to avoid deep nesting.
+== vs is - == compares value equality; is compares identity (use for `is None`).
+
+Topic: Loops (for, while)
+
+for loop (overview) - Iterates over a known/finite sequence (list, string, range, dict).
+range(start, stop, step) - Generates a sequence of numbers; stop is exclusive.
+enumerate() - Loops with both index and value together.
+for over dict.items() - Loops through key-value pairs together.
+while loop (overview) - Repeats while a condition stays True; used when iteration count is unknown.
+while True + break - Standard pattern for looping until an explicit exit condition.
+break - Exits the loop entirely.
+continue - Skips only the current iteration, loop continues.
+pass - No-op placeholder inside a loop body.
+for/while...else - else block runs only if the loop completes without hitting break.
+nested loops - Loop inside another loop, e.g. suites x tests combinations.
+list comprehension - [x for x in items if condition] - compact filter/transform loop.
+dict comprehension in loop context - {k: v for k, v in iterable} built from a loop-like expression.
+common bug - Never mutate a list while iterating it directly; build a new list/comprehension instead.

@@ -27,10 +27,22 @@ Every new topic follows this exact pattern - always follow it proactively:
             concepts_list.md              # Full list revision notes
             concept_tuples.md             # Full tuple revision notes
             concept_sets.md               # Full sets revision notes
+            concept_frozensets.md         # Full frozenset revision notes
+            concept_hashable_unhashable.md # Hashable vs unhashable concepts
+            concept_strings.md            # Full strings revision notes
+            concept_dictionary.md         # Full dictionary revision notes
+            concept_flow_control.md       # Full flow control (if/elif/else) revision notes
+            concept_loops.md              # Full loops (for/while) revision notes
         tasks/
             list_method_tasks.md          # List practice tasks (Q&A + self-assignments)
             tuple_method_tasks.md         # Tuple practice tasks (Q&A + self-assignments)
             set_method_tasks.md           # Set practice tasks (Q&A + self-assignments)
+            frozenset_method_tasks.md     # Frozenset practice tasks
+            hashable_unhashable_method_tasks.md # Hashable practice tasks
+            string_method_tasks.md        # String practice tasks
+            dictionary_method_tasks.md    # Dictionary practice tasks
+            flow_control_method_tasks.md  # Flow control practice tasks
+            loops_method_tasks.md         # Loop practice tasks
 demo.py                                   # Active practice/scratch file
 AGENTS.md                                 # This file - agent memory
 ```
@@ -43,9 +55,12 @@ AGENTS.md                                 # This file - agent memory
 - [x] Lists - methods, examples, tasks, notes
 - [x] Tuples - immutability, packing, unpacking, extended unpacking, tasks, notes
 - [x] Sets - set operations, methods, comparison methods, tasks, notes
-- [ ] Dictionaries
-- [ ] Program flow control (if/elif/else)
-- [ ] Loops (for, while, comprehensions)
+- [x] Frozensets - immutable sets, hashable, tasks, notes
+- [x] Hashable & Unhashable - what makes a type usable as dict key or set element
+- [x] Strings - methods, slicing, formatting, f-strings, tasks, notes
+- [x] Dictionaries - methods, access patterns, iteration, tasks, notes
+- [x] Program flow control (if/elif/else) - conditions, logical operators, truthy/falsy, ternary, tasks, notes
+- [x] Loops (for, while, comprehensions) - iteration, break/continue, loop-else, nested loops, tasks, notes
 - [ ] Functions and lambda expressions
 - [ ] Working with files and data (read/write, JSON, CSV)
 - [ ] Regular expressions for text processing

@@ -89,8 +89,8 @@ AGENTS.md                                 # Root agent memory file
 - [x] Hashable & Unhashable - what makes a type usable as dict key or set element
 - [x] Strings - methods, slicing, formatting, f-strings, tasks, notes
 - [x] Dictionaries - methods, access patterns, iteration, tasks, notes
-- [ ] Program flow control (if/elif/else)
-- [ ] Loops (for, while, comprehensions)
+- [x] Program flow control (if/elif/else) - conditions, logical operators, truthy/falsy, ternary, tasks, notes
+- [x] Loops (for, while, comprehensions) - iteration, break/continue, loop-else, nested loops, tasks, notes
 - [ ] Functions and lambda expressions
 - [ ] Working with files and data (read/write, JSON, CSV)
 - [ ] Regular expressions for text processing
